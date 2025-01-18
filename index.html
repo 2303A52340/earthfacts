@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #app {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Interesting Facts About Earth</h1>
+        <ul id="factsList"></ul>
+        <button id="changeFacts">Change Facts</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const facts = [
+                {
+                    title: "Age",
+                    description: "Earth is estimated to be about 4.54 billion years old, based on radiometric age dating of meteorite material and is continually being refined."
+                },
+                {
+                    title: "Water Coverage",
+                    description: "About 71% of Earth's surface is covered by water, and the oceans hold about 96.5% of all Earth's water."
+                },
+                {
+                    title: "Atmosphere Composition",
+                    description: "Earth's atmosphere is composed of 78% nitrogen, 21% oxygen, and small amounts of other gases including carbon dioxide, argon, and trace amounts of other gases."
+                },
+                {
+                    title: "Only Planet Known to Support Life",
+                    description: "Earth is the only planet in the universe known to support life. The diverse environments and ecosystems are home to millions of species of plants and animals."
+                },
+                {
+                    title: "The Magnetic Field",
+                    description: "Earth has a strong magnetic field due to its nickel-iron core, which protects the planet from the effects of solar wind."
+                },
+                {
+                    title: "Plate Tectonics",
+                    description: "Earth's lithosphere is divided into several rigid tectonic plates that migrate across the surface over periods of many millions of years. This movement causes earthquakes, volcanic activity, mountain-building, and oceanic trench formation."
+                },
+                {
+                    title: "The Moon",
+                    description: "Earth's moon is unusually large relative to the planet. The prevailing hypothesis is that it formed from the debris left over after a giant impact between Earth and a Mars-sized body."
+                },
+                {
+                    title: "Rotation",
+                    description: "Earth rotates on its axis approximately every 24 hours, creating the cycle of day and night. This rotation is gradually slowing down over time."
+                },
+                {
+                    title: "Orbit",
+                    description: "Earth orbits the Sun every 365.25 days, which is why every four years, a leap year with 366 days occurs to keep our calendar year synchronized with the astronomical year."
+                },
+                {
+                    title: "Biodiversity",
+                    description: "Earth's great biodiversity is a result of the diverse climates and ecosystems found across different geographical areas, ranging from arctic cold to tropical heat, and from dry deserts to lush rainforests."
+                }
+            ];
+
+            const factsList = document.getElementById('factsList');
+            const changeFactsButton = document.getElementById('changeFacts');
+
+            facts.forEach(fact => {
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>${fact.title}</strong>: ${fact.description}`;
+                factsList.appendChild(li);
+            });
+
+            changeFactsButton.addEventListener('click', function() {
+                factsList.innerHTML = '<li>New fact or message here!</li>';
+            });
+        });
+    </script>
+</body>
+</html>
